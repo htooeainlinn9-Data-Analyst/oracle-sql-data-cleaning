@@ -1,0 +1,10 @@
+ORDER_ID,CUSTOMER_NAME,EMAIL,PHONE,ORDER_DATE,ORDER_AMOUNT,COUNTRY
+2,John Doe,john.doe@gmail.com,91234567,5/12/2024,120,Usa
+5,Anna Kim,anna.kim@gmail.com,6598765432,5/13/2024,300,Singapore
+3,Mary Smith,mary.smith at yahoo.com,15558888,5/14/2024,250,United States
+9,Bob Chan,bob.chan@hotmail.com,,5/15/2024,999999,Singapore
+4,James Lee,,12345678,,,Singapore
+6,Anna Kim,anna.kim@gmail.com,98765432,,300,Singapore
+7,Tom Brown,tom.brown@@gmail.com,,,1000,Uk
+8,Lisa Wong,lisawonggmail.com,903455432,,450,Malaysia
+1,John Doe,john.doe@gmail,91234567,,120,Usa
