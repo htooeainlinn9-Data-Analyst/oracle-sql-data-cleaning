@@ -1,86 +1,120 @@
-📊 Oracle SQL Data Cleaning Project — Customer Orders Dataset
-🔥 Overview
+# 📊 Oracle SQL Data Cleaning Project — Customer Orders Dataset
 
-This project focuses on cleaning and preparing a messy Customer Orders dataset using Oracle SQL Developer.
-Raw data included:
+## 🔥 Overview  
+This project focuses on cleaning and preparing a messy **Customer Orders** dataset using **Oracle SQL Developer**.  
 
-Duplicates
+The raw dataset intentionally included:  
+- Duplicate rows  
+- Null values  
+- Invalid email formats  
+- Wrong and inconsistent date formats  
+- Mixed uppercase/lowercase names  
+- Phone numbers with symbols/spaces  
+- Numeric values stored as text  
+- Outliers  
+- Extra whitespace  
 
-Null values
+The goal was to transform this messy data into a clean, analysis-ready dataset.
 
-Wrong date formats
+---
 
-Inconsistent names
+## 🛠️ Objective  
+Perform **end-to-end SQL data cleaning** using Oracle SQL, and deliver a final clean table suitable for analytics or reporting.
 
-Mixed uppercase/lowercase
+---
 
-Invalid emails
+## 📌 Key Data Cleaning Steps
 
-Invalid phone numbers
+### ✔ 1. Remove duplicate rows  
+Used `ROW_NUMBER()` analytic function with `PARTITION BY order_id`.
 
-Numeric fields stored as text
+### ✔ 2. Standardize customer names  
+- Trim spaces  
+- Remove extra spaces between words  
+- Convert to Proper Case (`INITCAP`)
 
-Extra spaces
+### ✔ 3. Clean email formatting  
+- Convert to lowercase  
+- Remove spaces  
+- Identify invalid emails
 
-🛠️ Objective
+### ✔ 4. Clean phone numbers  
+- Remove all non-numeric characters using `REGEXP_REPLACE('[^0-9]','')`
 
-Perform end-to-end SQL data cleaning, transforming a raw dataset into a clean, analysis-ready table.
+### ✔ 5. Standardize dates  
+Converted multiple messy date formats into valid Oracle `DATE` type using conditional `TO_DATE()`.
 
-📌 Key Cleaning Steps
+### ✔ 6. Clean numeric values  
+- Convert text numbers to NUMBER  
+- Invalid strings → NULL
 
-✔ Remove duplicates
-✔ Standardize customer names
-✔ Fix email formatting
-✔ Clean phone numbers
-✔ Convert inconsistent date formats
-✔ Standardize country names
-✔ Convert text numbers → numeric
-✔ Handle invalid values
-✔ Create final cleaned table
+### ✔ 7. Standardize country names  
+- Trim  
+- Proper Case  
+- Remove spacing inconsistencies
 
-🗄 Final Clean Table
+### ✔ 8. Create final clean table  
+`customer_orders_final` is fully optimized for reporting and analysis.
 
-customer_orders_final
+---
 
-Cleaned customer names
+## 🗄 Final Clean Table: `customer_orders_final`
+Includes:
+- `order_id`  
+- `customer_name`  
+- `email`  
+- `phone`  
+- `order_date`  
+- `order_amount`  
+- `country`  
 
-Validated email & phone
+All fields are cleaned, validated, and standardized.
 
-Standardized dates
+---
 
-Numeric order amount
+## 📂 Files Included
+- **customer_orders_cleaned.csv** — final cleaned dataset  
+- **data_cleaning_script.sql** — complete SQL script for all cleaning steps  
+- **README.md** — project documentation  
 
-Unified country formatting
+---
 
-🧪 Useful Analysis Queries
+## 📊 Analysis Queries Included  
+- Total revenue  
+- Total number of orders  
+- Average order value  
+- Orders by country  
+- Monthly revenue trend  
+- Top customers by spending  
+- Missing or problematic data summary  
 
-Total revenue
+---
 
-Orders by country
+## 🧰 Tools Used  
+- Oracle SQL Developer  
+- Oracle Database 19c  
+- SQL (DDL, DML, Analytic Functions, Date Functions, Regex)
 
-Top spending customers
+---
 
-Monthly revenue trend
+## 📘 Learning Outcomes  
+Through this project, I strengthened my skills in:
+- Data cleaning  
+- Regex for data validation  
+- Date handling in Oracle  
+- Analytic functions  
+- Building reproducible SQL workflows  
+- Preparing datasets for analytics  
 
-Missing values summary
+---
 
-📂 Files Included
+## 👤 Author  
+**Htoo Eain Linn**  
+Aspiring Data Analyst  
+- Oracle SQL  
+- MySQL  
+- Power BI  
+- Excel  
 
-customer_orders_cleaned.csv — final dataset
+---
 
-data_cleaning_script.sql — all SQL steps
-
-README.md — project documentation
-
-📦 Tools Used
-
-Oracle SQL Developer
-
-Oracle Database 19c
-
-SQL (DDL + DML + Analytical functions)
-
-👤 Author
-
-Htoo Eain Linn — Aspiring Data Analyst
-(Oracle SQL • Power BI • Excel • MySQL)
